@@ -1,8 +1,9 @@
-# Aula 04 - Nginx <a name="unifaat-frontend-project"></a>
+# Projeto Integração de Software <a name="unifaat-frontend-project"></a>
 
 ## 📑 Sumário
 
 - [Instalação e Execução](#instalacao-e-execucao)
+- [Entry point Command](#entry-point-command)
 - [Acesse](#acesse)
 
 ---
@@ -25,7 +26,6 @@
 
 3. Criar o arquivo `.env` na raiz do projeto copiando o `.env.example`:
 
-
    ```sh
    cp .env.example .env
    ```
@@ -38,10 +38,45 @@
 
 5. Subir a aplicação com Docker Compose:
 
-
    ```sh
    docker compose up --build
    ```
+
+---
+
+## Entry point Command <a name="entry-point-command"></a>
+
+Os comandos da aplicação ficam na pasta `app/Commands`.
+
+Cada arquivo dentro dessa pasta representa um comando que pode ser executado pelo entry point de CLI da aplicação.
+
+### Estrutura esperada
+
+```txt
+app/
+└── Commands/
+    └── MeuComando.js
+```
+
+### Executando um comando
+
+```sh
+node command [comando]
+```
+
+### Exemplo
+
+Se existir um arquivo como:
+
+```txt
+app/Commands/TesteCommand.js
+```
+
+você pode executá-lo com:
+
+```sh
+node command TesteCommand
+```
 
 ---
 
@@ -50,3 +85,4 @@
 - Servidor nginx: [http://localhost:8080](http://localhost:8080)
 
 ---
+```
